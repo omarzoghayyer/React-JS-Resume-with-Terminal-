@@ -12,7 +12,18 @@
     align-items: center;
     overflow: hidden;
   }
-  
+  .terminal-container {
+    height: 500px; /* Adjust this to fit your terminal size */
+    overflow: auto;
+  }
+  .terminal-window {
+    height: 500px;
+    width: 80%;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+  }
   .terminal-header {
     width: 100%;
     height: 40px;
@@ -45,8 +56,8 @@
   
   .terminal-prompt span {
     color: #73ff00;
-    font-weight: bold;
-    margin-right: 5px;
+    font-weight: 500;
+    margin-right: 2px;
   }
   
   .terminal-prompt input[type="text"] {
@@ -60,6 +71,33 @@
     margin-right: 5px;
     outline: none;
     width: 100%;
+  }
+  .terminal-prompt {
+    display: flex;
+    align-items: center;
+  }
+  
+  .terminal-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: monospace;
+    font-size: 16px;
+    color: white;
+    caret-color: white;
+  }
+  
+  .terminal-input::placeholder {
+    color: gray;
+  }
+  
+  .terminal-output {
+    color: white;
+  }
+  
+  .white-text {
+    color: white;
   }
   
   .terminal-prompt input[type="text"]:focus {
@@ -81,7 +119,6 @@
     color: green;
   }
  
-
   .terminal-input::after {
     content: "|";
     display: inline-block;
@@ -89,6 +126,10 @@
   }
   .white-text {
     color: white;
+  }
+  #resume {
+    max-height: 500px;
+    overflow-y: scroll;
   }
   
   @keyframes blink {

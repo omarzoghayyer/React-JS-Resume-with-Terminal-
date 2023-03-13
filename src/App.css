@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: #f5f5f5;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -64,12 +68,6 @@
   margin-bottom: 10px;
   justify-content: flex-start;
   color: whitesmoke;
-}
-
-.terminal-prompt span {
-  color: #00ff00;
-  font-weight: bold;
-  margin-right: 5px;
 }
 
 .terminal-prompt input[type="text"] {

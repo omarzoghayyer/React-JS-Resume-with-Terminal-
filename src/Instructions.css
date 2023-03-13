@@ -1,0 +1,24 @@
+.instructions {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .instructions h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  
+  .instructions ul {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .instructions li {
+    margin-bottom: 5px;
+    font-size: 1.2em;
+  }
+  
