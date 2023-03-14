@@ -86,7 +86,7 @@ function Terminal() {
         setOutput(
           output +
             `<div class="terminal-prompt"><span>${path}\\background\\></span>Here is my background:</div>` +
-            "<div class='white-text'>I hold a busniess degree with experience in tech. My recent project is the one you are using now. The one before that is a simple compiler.</div>"
+            "<div class='white-text'>I hold a BS busniess degree with 5 years of experience in tech. My recent project is the one you are using now. The one before that is a simple compiler.</div>"
         );
     } else if (command === "projects") {
       setOutput(
