@@ -52,7 +52,7 @@ function Terminal() {
     if (command === "ls") {
       setOutput(
         output +
-          `<div class="yellow-text">--background --projects --resume --interest</div>`
+          `<div class="yellow-text">--background --projects --resume --interest --cat</div>`
       );
     } else if (command === "clear") {
       setOutput("");
@@ -82,6 +82,34 @@ function Terminal() {
           `<div class="terminal-prompt"><span>${path}\\interest\\></span>Here are my interests:</div>` +
           "<div class='white-text'>As an engineer with a keen interest in operating systems and automation, I enjoy contributing to open source projects related to operating system architecture in my free time. I am also committed to expanding my knowledge of lower-level programming languages to gain a deeper understanding of computer systems architecture and optimize software performance.</div>"
       );
+    } 
+    
+    
+    else if (command === "cat") {
+      const cat = document.createElement("div");
+      const catImage = document.createElement("img");
+      catImage.src = "https://bit.ly/fcc-relaxing-cat";
+      catImage.style.width = "50%";
+      catImage.style.height = "auto";
+      cat.appendChild(catImage);
+      document.querySelector(".terminal-body").appendChild(cat);
+      cat.style.position = "absolute";
+      cat.style.bottom = "0";
+      cat.style.left = "0";
+      let pos = 0;
+      const id = setInterval(frame, 20);
+      function frame() {
+        if (pos === 100) {
+          clearInterval(id);
+        } else {
+          pos++;
+          cat.style.left = pos + "%";
+        }
+      }
+    
+
+
+    
        } else if (command === "background") {
         setOutput(
           output +
@@ -147,16 +175,17 @@ function Terminal() {
     </div>
 
 <div className="instructions">
-<p>Welcome to the Terminal! Here are some available commands:</p>
+<p>Welcome to the Resume through Terminal! Here are some available commands:</p>
 <ul>
-  <li>ls - list all available directories and files</li>
-  <li>cd [directory] - change the current directory</li>
-  <li>clear - clear the terminal screen</li>
+  <li><strong>ls</strong> - list all available directories and files</li>
+  <li><strong>cd</strong> [directory] - change the current directory</li>
+  <li><strong>clear</strong> - clear the terminal screen</li>
+  <li><strong>back</strong> - go back one directory</li>
 </ul>
 </div>
 </dev>
   );
   
-}
+  }
 
 export default Terminal;
