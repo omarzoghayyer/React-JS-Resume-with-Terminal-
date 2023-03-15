@@ -13,8 +13,13 @@
     overflow: hidden;
   }
   .terminal-container {
-    height: 500px; /* Adjust this to fit your terminal size */
+    height: calc(50vh - 40px); /* Adjust this to fit your terminal size */
     overflow: auto;
+  }
+  
+  #resume {
+    max-height: calc(50vh - 40px);
+    overflow-y: scroll;
   }
   .terminal-window {
     height: 500px;
@@ -106,11 +111,12 @@
   
   .terminal-output {
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 120px);
     padding: 10px;
     overflow-y: scroll;
     font-family: "Menlo", monospace;
     font-size: 16px;
+    padding-top: 20px;
     color: #fff;
   }
   
