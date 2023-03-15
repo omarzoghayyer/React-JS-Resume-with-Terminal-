@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./Terminal.css";
 import "./Resume.css";
@@ -9,6 +9,43 @@ function Terminal() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [path, setPath] = useState("c:\\omar");
+  const [catPosition, setCatPosition] = useState({ x: 50, y: 50 });
+  const [catDirection, setCatDirection] = useState({ x: 1, y: 1 });
+
+const pathIcon = (
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/189/189670.png"
+    alt="folder icon"
+    style={{ width: "20px", height: "20px", marginRight: "5px" }}
+  />
+);
+
+
+function moveCat() {
+  let nextX = catPosition.x + catDirection.x;
+  let nextY = catPosition.y + catDirection.y;
+
+  // Check if cat hits a horizontal wall
+  if (nextX < 0 || nextX > 100) {
+    setCatDirection({ ...catDirection, x: -catDirection.x });
+    nextX = catPosition.x + catDirection.x;
+  }
+
+  // Check if cat hits a vertical wall
+  if (nextY < 0 || nextY > 100) {
+    setCatDirection({ ...catDirection, y: -catDirection.y });
+    nextY = catPosition.y + catDirection.y;
+  }
+
+  setCatPosition({ x: nextX, y: nextY });
+}
+
+useEffect(() => {
+  const intervalId = setInterval(moveCat, 20);
+
+  return () => clearInterval(intervalId);
+}, []);
+
 
   function showProject() {
     return `
@@ -86,39 +123,25 @@ function Terminal() {
           "<div class='white-text'>As an engineer with a keen interest in operating systems and automation, I enjoy contributing to open source projects related to operating system architecture in my free time. I am also committed to expanding my knowledge of lower-level programming languages to gain a deeper understanding of computer systems architecture and optimize software performance.</div>"
       );
     } 
-    
-    
+
     else if (command === "cat") {
       const cat = document.createElement("div");
+      cat.classList.add("cat-icon");
       const catImage = document.createElement("img");
-      catImage.src = "https://bit.ly/fcc-relaxing-cat";
-      catImage.style.width = "50%";
-      catImage.style.height = "auto";
+      catImage.src = "";
       cat.appendChild(catImage);
+      const catText = document.createElement("div");
+      catText.classList.add("cat-text");
+      catText.textContent = "Hire Me";
+      cat.appendChild(catText);
       document.querySelector(".terminal-body").appendChild(cat);
-      cat.style.position = "absolute";
-      cat.style.bottom = "0";
-      cat.style.left = "0";
-      let pos = 0;
-      const id = setInterval(frame, 20);
-      function frame() {
-        if (pos === 100) {
-          clearInterval(id);
-        } else {
-          pos++;
-          cat.style.left = pos + "%";
-        }
-      }
-    
-
-
-    
-       } else if (command === "background") {
-        setOutput(
-          output +
-            `<div class="terminal-prompt"><span>${path}\\background\\></span>Here is my background:</div>` +
-            "<div class='white-text'>I hold a BS busniess degree with 5 years of experience in tech. My recent project is the one you are using now. The one before that is a simple compiler.</div>"
-        );
+    }
+    else if (command === "background") {
+      setOutput(
+        output +
+          `<div class="terminal-prompt"><span>${path}\\background\\></span>Here is my background:</div>` +
+          "<div class='white-text'>I hold a BS busniess degree with 5 years of experience in tech. My recent project is the one you are using now. The one before that is a simple compiler.</div>"
+      );
     } else if (command === "projects") {
       setOutput(
         output +

@@ -113,3 +113,58 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.terminal-body {
+  position: relative;
+}
+
+.cat-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background-image: url('https://media.tenor.com/wDzr_DRyv8oAAAAC/omg-cat.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: run 3s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cat-icon img {
+  width: 100px;
+  height: auto;
+}
+
+.cat-text {
+  position: absolute;
+  top: 70%;
+  color: #dfdb1c;
+  font-weight: 300;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+@keyframes run {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateX(70%) translateY(0) rotate(90deg);
+  }
+  50% {
+    transform: translateX(70%) translateY(70%) rotate(180deg);
+  }
+  75% {
+    transform: translateX(0) translateY(70%) rotate(270deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(360deg);
+  }
+}
