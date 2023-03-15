@@ -52,8 +52,10 @@ function Terminal() {
     if (command === "ls") {
       setOutput(
         output +
-          `<div class="yellow-text">--background --projects --resume --interest --cat</div>`
+        `<div class="terminal-prompt"><span>${path}\\></span></div>
+        <div class="yellow-text" style="margin-top: -20px; margin-left: 10px;">--background --projects --resume --interest --cat</div>`
       );
+      
     } else if (command === "clear") {
       setOutput("");
     } else if (command.startsWith("cd")) {

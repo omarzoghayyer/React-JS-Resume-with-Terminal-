@@ -5,21 +5,6 @@
 body {
   background-color: #f5f5f5;
 }
-.terminal {
-  position: relative;
-}
-
-.terminal-body {
-  position: relative;
-  height: 80%;
-}
-
-.terminal-body div {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
 
 .App-logo {
   height: 40vmin;
