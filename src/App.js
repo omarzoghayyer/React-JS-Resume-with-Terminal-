@@ -52,7 +52,8 @@ function Terminal() {
     if (command === "ls") {
       setOutput(
         output +
-        `<div class="terminal-prompt"><span>${path}\\>$ </span></div>
+        `<div class="terminal-prompt"><span><i class="fas fa-folder"></i>&nbsp;${path}\\></span>
+        </div>
         <div class="yellow-text" style="margin-top: -10px; margin-left: 10px;">--background --projects --resume --interest --cat</div>`
       );
       
