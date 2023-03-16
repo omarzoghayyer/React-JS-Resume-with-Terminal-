@@ -23,7 +23,9 @@
   }
   .terminal-window {
     height: 500px;
+    overflow-y: auto;
     width: 80%;
+    overflow-y: auto;
     margin: auto;
     border: 2px solid black;
     border-radius: 5px;
@@ -48,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
   }
   
   .terminal-prompt {
@@ -81,7 +84,14 @@
     display: flex;
     align-items: center;
   }
+  .terminal-container::-webkit-scrollbar {
+    width: 5px;
+    background-color: #1e1e1e;
+  }
   
+  .terminal-container::-webkit-scrollbar-thumb {
+    background-color: #555;
+  }
   .terminal-input {
     flex-grow: 1;
     border: none;
@@ -97,10 +107,6 @@
     color: gray;
   }
   
-  .terminal-output {
-    color: white;
-  }
-  
   .white-text {
     color: white;
   }
@@ -108,7 +114,13 @@
   .terminal-prompt input[type="text"]:focus {
     border-bottom: 1px solid #fff;
   }
-  
+  .terminal-prompt input[type="text"] {
+  flex: 1;
+}
+.terminal-container::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
   .terminal-output {
     width: 100%;
     height: calc(100% - 120px);
@@ -118,8 +130,23 @@
     font-size: 16px;
     padding-top: 20px;
     color: #fff;
+    scroll-behavior: smooth;
+
   }
-  
+ 
+
+ .terminal-output::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+ }
+ ::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(124, 137, 160);
+}
+
   .cursor {
     animation: blink 1s infinite;
     color: green;
