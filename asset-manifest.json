@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/omarzoghayyer/React-JS-Resume-with-Terminal-/static/css/main.b1f83c25.css",
+    "main.js": "/omarzoghayyer/React-JS-Resume-with-Terminal-/static/js/main.50c51536.js",
+    "static/js/496.0c716fe9.chunk.js": "/omarzoghayyer/React-JS-Resume-with-Terminal-/static/js/496.0c716fe9.chunk.js",
+    "index.html": "/omarzoghayyer/React-JS-Resume-with-Terminal-/index.html",
+    "main.b1f83c25.css.map": "/omarzoghayyer/React-JS-Resume-with-Terminal-/static/css/main.b1f83c25.css.map",
+    "main.50c51536.js.map": "/omarzoghayyer/React-JS-Resume-with-Terminal-/static/js/main.50c51536.js.map",
+    "496.0c716fe9.chunk.js.map": "/omarzoghayyer/React-JS-Resume-with-Terminal-/static/js/496.0c716fe9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1f83c25.css",
+    "static/js/main.50c51536.js"
+  ]
+}
