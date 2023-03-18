@@ -86,7 +86,7 @@
   }
   .terminal-container::-webkit-scrollbar {
     width: 5px;
-    background-color: #1e1e1e;
+    background-color: #292727;
   }
   
   .terminal-container::-webkit-scrollbar-thumb {
