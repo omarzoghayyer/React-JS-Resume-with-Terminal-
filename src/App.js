@@ -8,7 +8,7 @@ import "./Instructions.css";
 function Terminal() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [path, setPath] = useState("c:\\omar");
+  const [path, setPath] = useState("c:\\user");
   const [catPosition, setCatPosition] = useState({ x: 50, y: 50 });
   const [catDirection, setCatDirection] = useState({ x: 1, y: 1 });
   
