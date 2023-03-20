@@ -1,46 +1,44 @@
 .resume {
-    max-height: 400px;
-    overflow: auto;
-  }
-  
-  .terminal-window {
-    height: auto;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .yellow-text {
-    color: rgb(187, 187, 9);
-  }
-  
-  
-  .terminal-prompt {
-    display: flex;
-    align-items: center;
-  }
-  
-  .terminal-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-family: monospace;
-    font-size: 16px;
-    color: white;
-    caret-color: white;
-  }
-  
-  .terminal-input::placeholder {
-    color: gray;
-  }
-  
-  .terminal-output {
-    color: white;
-  }
-  
-  .white-text {
-    color: white;
-  }
-  
+  max-height: 400px;
+  overflow: auto;
+}
+
+.terminal-window {
+  height: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.yellow-text {
+  color: rgb(9, 110, 187);
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: monospace;
+  font-size: 16px;
+  color: white;
+  caret-color: white;
+}
+
+.terminal-input::placeholder {
+  color: gray;
+}
+
+.terminal-output {
+  color: white;
+}
+
+.white-text {
+  color: white;
+}

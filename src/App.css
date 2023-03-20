@@ -59,14 +59,17 @@ body {
   font-size: 16px;
   color: #fff;
 }
-
+.NoteInstructions {
+  background-color: rgb(243, 140, 6);
+  padding: 2px;
+  text-align: center;
+}
 @media (max-width: 768px) {
   .terminal {
     height: 80vh;
     max-height: none;
   }
 }
-
 
 .App-link {
   color: #61dafb;
@@ -91,7 +94,7 @@ body {
   left: 0;
   width: 100px;
   height: 100px;
-  background-image: url('https://media.tenor.com/wDzr_DRyv8oAAAAC/omg-cat.gif');
+  background-image: url("https://media.tenor.com/wDzr_DRyv8oAAAAC/omg-cat.gif");
   background-size: contain;
   background-repeat: no-repeat;
   animation: run 3s linear infinite;

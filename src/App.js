@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef  } from "react";
+import React, { useState, useEffect, useRef } from "react";
+
 import "./App.css";
 import "./Terminal.css";
 import "./Resume.css";
 import "./Instructions.css";
-
 
 function Terminal() {
   const [input, setInput] = useState("");
@@ -11,33 +11,31 @@ function Terminal() {
   const [path, setPath] = useState("c:\\user");
   const [catPosition, setCatPosition] = useState({ x: 50, y: 50 });
   const [catDirection, setCatDirection] = useState({ x: 1, y: 1 });
-  
- 
-function moveCat() {
-  let nextX = catPosition.x + catDirection.x;
-  let nextY = catPosition.y + catDirection.y;
 
-  // Check if cat hits a horizontal wall
-  if (nextX < 0 || nextX > 100) {
-    setCatDirection({ ...catDirection, x: -catDirection.x });
-    nextX = catPosition.x + catDirection.x;
+  function moveCat() {
+    let nextX = catPosition.x + catDirection.x;
+    let nextY = catPosition.y + catDirection.y;
+
+    // Check if cat hits a horizontal wall
+    if (nextX < 0 || nextX > 100) {
+      setCatDirection({ ...catDirection, x: -catDirection.x });
+      nextX = catPosition.x + catDirection.x;
+    }
+
+    // Check if cat hits a vertical wall
+    if (nextY < 0 || nextY > 100) {
+      setCatDirection({ ...catDirection, y: -catDirection.y });
+      nextY = catPosition.y + catDirection.y;
+    }
+
+    setCatPosition({ x: nextX, y: nextY });
   }
 
-  // Check if cat hits a vertical wall
-  if (nextY < 0 || nextY > 100) {
-    setCatDirection({ ...catDirection, y: -catDirection.y });
-    nextY = catPosition.y + catDirection.y;
-  }
+  useEffect(() => {
+    const intervalId = setInterval(moveCat, 20);
 
-  setCatPosition({ x: nextX, y: nextY });
-}
-
-useEffect(() => {
-  const intervalId = setInterval(moveCat, 20);
-
-  return () => clearInterval(intervalId);
-}, []);
-
+    return () => clearInterval(intervalId);
+  }, []);
 
   function showProject() {
     return `
@@ -87,6 +85,7 @@ useEffect(() => {
           <h4>Pro Unlimited @ Electronic Arts, Redwood City, CA— Quality Engineer</h4>
           <p>August 2020 - June 2021 </p>
           <ul>
+            <li>Worked on the  Battlefield Mobile Game.</li>
             <li> I was responsible for evaluating and implementing testing methods for different aspects of the project. Collaborating with managers and team leaders, I aimed to enhance the quality of the development process. Additionally, I contributed to the automation of manual performance tests and partnered with developers to convert unprocessed data into comprehensible information through Power-Bi.
             </li>
           </ul>
@@ -149,11 +148,11 @@ useEffect(() => {
       </div>
     `;
   }
-  
+
   function handleInputChange(event) {
     setInput(event.target.value);
   }
-  
+
   function handleFormSubmit(event) {
     event.preventDefault();
     const command = input.trim();
@@ -212,15 +211,12 @@ useEffect(() => {
     } else if (command === "projects") {
       setOutput(
         output +
-        `<div class="terminal-prompt"><span>${path}\\></span>Do you want to view a GitHub account or print the project description in the terminal? Type 'here' or 'Open Github'</div>`
+          `<div class="terminal-prompt"><span>${path}\\></span>Do you want to view a GitHub account or print the project description in the terminal? Type 'here' or 'Open Github'</div>`
       );
-    } else if(command === "here") {
+    } else if (command === "here") {
       setOutput(output + "<div class='white-text'>" + showProject() + "</div>");
     } else if (command === "Open Github") {
-      window.open(
-        "https://github.com/omarzoghayyer"
-      );
-  
+      window.open("https://github.com/omarzoghayyer");
     } else if (command === "back") {
       const pathParts = path.split("\\");
       pathParts.pop();
@@ -241,45 +237,81 @@ useEffect(() => {
     setInput("");
   }
 
-  
   return (
     <dev>
-    <div className="terminal">
-      <div className="terminal-header">Terminal</div>
-      <div
-        className="terminal-body cursor-blink"
-        dangerouslySetInnerHTML={{ __html: output }}
-      ></div>
-      
-      <form onSubmit={handleFormSubmit}>
-        <div className="terminal-prompt">
-          <span>
-            <i className="fa fa-folder"></i>&nbsp;{path}\>
-          </span>``
-          <input
-            type="text"
-            className="terminal-input"
-            placeholder="Enter command..."
-            value={input}
-            onChange={handleInputChange}
-            autoFocus
-          />
-        </div>
-      </form>
-    </div>
+      <div className="terminal">
+        <div className="terminal-header">Terminal</div>
+        <div
+          className="terminal-body cursor-blink"
+          dangerouslySetInnerHTML={{ __html: output }}
+        ></div>
 
-<div className="instructions">
-<p>Welcome to the Resume through Terminal! Here are some available commands:</p>
-<ul>
-  <li><strong>ls</strong> - list all available directories and files</li>
-  <li><strong>cd</strong> [directory] - change the current directory</li>
-  <li><strong>clear</strong> - clear the terminal screen</li>
-  <li><strong>back</strong> - go back one directory</li>
-</ul>
-</div>
-</dev>
+        <form onSubmit={handleFormSubmit}>
+          <div className="terminal-prompt">
+            <span>
+              <i className="fa fa-folder"></i>&nbsp;{path}
+            </span>
+            <input
+              type="text"
+              className="terminal-input"
+              placeholder="Type `ls` to start..."
+              value={input}
+              onChange={handleInputChange}
+              autoFocus
+            />
+          </div>
+        </form>
+      </div>
+
+      <div className="instructions">
+        <p>
+          Welcome to the Resume through Terminal! Here are some available
+          commands:
+        </p>
+        <ul>
+          <li>
+            <strong>ls</strong> - list all available directories and files
+          </li>
+          <li>
+            <strong>cd</strong> [directory] - change the current directory
+          </li>
+          <li>
+            <strong>clear</strong> - clear the terminal screen
+          </li>
+          <li>
+            <strong>back</strong> - go back one directory
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <p className="NoteInstructions">
+          This program is in testing mode and has limited commands available!
+          You may also find several bugs around when moving between directories.
+          Feel free to report any encountered bugs{" "}
+          <a href="https://github.com/omarzoghayyer/React-JS-Resume-with-Terminal-">
+            here
+          </a>
+          .
+        </p>
+        <div className="Features">
+          <h2>Request a Feature</h2>
+          <form
+            action="https://api.github.com/repos/omarzoghayyer/React-JS-Resume-with-Terminal-/issues
+"
+            method="POST"
+          >
+            <input type="hidden" name="title" value="New feature request" />
+            <input type="hidden" name="labels[]" value="feature" />
+            <textarea
+              name="body"
+              placeholder="Enter your feature request here [Note: Not Working. Development mode only]"
+            ></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </footer>
+    </dev>
   );
-  
-  }
+}
 
 export default Terminal;
