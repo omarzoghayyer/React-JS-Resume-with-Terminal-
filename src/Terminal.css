@@ -1,144 +1,142 @@
 .terminal {
-    width: 90%;
-    max-width: 800px;
-    height: 50vh;
-    max-height: 500px;
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .terminal-container {
-    height: calc(50vh - 40px); /* Adjust this to fit your terminal size */
-    overflow: auto;
-  }
-  
-  #resume {
-    max-height: calc(50vh - 40px);
-    overflow-y: scroll;
-  }
-  .terminal-window {
-    height: 500px;
-    overflow-y: auto;
-    width: 80%;
-    overflow-y: auto;
-    margin: auto;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  .terminal-header {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #3f3f3f;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    font-size: 1.2rem;
-    color: #fff;
-  }
-  
-  .terminal-body {
-    width: 100%;
-    height: calc(100% - 40px);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-  }
-  
-  .terminal-prompt {
-    display: flex;
-    padding-left: 1px;
-    align-items: center;
-    margin-bottom: 10px;
-    justify-content: flex-start;
-    color: #fff;
-  }
-  
-  .terminal-prompt span {
-    color: #73ff00;
-    font-weight: 500;
-    margin-right: 2px;
-  }
-  
-  .terminal-prompt input[type="text"] {
-    font-family: "Menlo", monospace;
-    font-size: 16px;
-    color: #fff;
-    background-color: #2d2d2d;
-    border: none;
-    border-bottom: 1px solid #d7ba7d;
-    padding: 5px;
-    margin-right: 5px;
-    outline: none;
-    width: 100%;
-  }
-  .terminal-prompt {
-    display: flex;
-    align-items: center;
-  }
-  .terminal-container::-webkit-scrollbar {
-    width: 5px;
-    background-color: #292727;
-  }
-  
-  .terminal-container::-webkit-scrollbar-thumb {
-    background-color: #555;
-  }
-  .terminal-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-family: monospace;
-    font-size: 16px;
-    color: white;
-    caret-color: white;
-  }
-  
-  .terminal-input::placeholder {
-    color: gray;
-  }
-  
-  .white-text {
-    color: white;
-  }
-  
-  .terminal-prompt input[type="text"]:focus {
-    border-bottom: 1px solid #fff;
-  }
-  .terminal-prompt input[type="text"] {
+  width: 90%;
+  max-width: 800px;
+  height: 50vh;
+  max-height: 500px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.terminal-container {
+  height: calc(50vh - 40px); /* Adjust this to fit your terminal size */
+  overflow: auto;
+}
+
+#resume {
+  max-height: calc(50vh - 40px);
+  overflow-y: scroll;
+}
+.terminal-window {
+  height: 500px;
+  overflow-y: auto;
+  width: 80%;
+  overflow-y: auto;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+.terminal-header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3f3f3f;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.terminal-body {
+  width: 100%;
+  height: calc(100% - 40px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.terminal-prompt {
+  display: flex;
+  padding-left: 1px;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+.terminal-prompt span {
+  color: #73ff00;
+  font-weight: 500;
+  margin-right: 2px;
+}
+
+.terminal-prompt input[type="text"] {
+  font-family: "Menlo", monospace;
+  font-size: 16px;
+  color: #fff;
+  background-color: #2d2d2d;
+  border: none;
+  border-bottom: 1px solid #d7ba7d;
+  padding: 5px;
+  margin-right: 5px;
+  outline: none;
+  width: 100%;
+}
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+}
+.terminal-container::-webkit-scrollbar {
+  width: 5px;
+  background-color: #292727;
+}
+
+.terminal-container::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+.terminal-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: monospace;
+  font-size: 16px;
+  color: white;
+  caret-color: white;
+}
+
+.terminal-input::placeholder {
+  color: gray;
+}
+
+.white-text {
+  color: white;
+}
+
+.terminal-prompt input[type="text"]:focus {
+  border-bottom: 1px solid #fff;
+}
+.terminal-prompt input[type="text"] {
   flex: 1;
 }
 .terminal-container::-webkit-scrollbar-thumb {
   background-color: black;
 }
 
-  .terminal-output {
-    width: 100%;
-    height: calc(100% - 120px);
-    padding: 10px;
-    overflow-y: scroll;
-    font-family: "Menlo", monospace;
-    font-size: 16px;
-    padding-top: 20px;
-    color: #fff;
-    scroll-behavior: smooth;
+.terminal-output {
+  width: 100%;
+  height: calc(100% - 120px);
+  padding: 10px;
+  overflow-y: scroll;
+  font-family: "Menlo", monospace;
+  font-size: 16px;
+  padding-top: 20px;
+  color: #fff;
+  scroll-behavior: smooth;
+}
 
-  }
- 
-
- .terminal-output::-webkit-scrollbar-track {
-    background-color: #1e1e1e;
- }
- ::-webkit-scrollbar {
+.terminal-output::-webkit-scrollbar-track {
+  background-color: #1e1e1e;
+}
+::-webkit-scrollbar {
   width: 5px;
   height: 4px;
 }
@@ -147,34 +145,32 @@
   background-color: rgb(124, 137, 160);
 }
 
-  .cursor {
-    animation: blink 1s infinite;
-    color: green;
+.cursor {
+  animation: blink 1s infinite;
+  color: green;
+}
+
+.terminal-input::after {
+  content: "|";
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+.white-text {
+  color: white;
+}
+#resume {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
- 
-  .terminal-input::after {
-    content: "|";
-    display: inline-block;
-    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
-  .white-text {
-    color: white;
-  }
-  #resume {
-    max-height: 500px;
-    overflow-y: scroll;
-  }
-  
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-  
-  
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-  
+}
