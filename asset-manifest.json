@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/React-JS-Resume-with-Terminal-/static/css/main.b1f83c25.css",
-    "main.js": "/React-JS-Resume-with-Terminal-/static/js/main.cc4060a2.js",
+    "main.css": "/React-JS-Resume-with-Terminal-/static/css/main.d8601abe.css",
+    "main.js": "/React-JS-Resume-with-Terminal-/static/js/main.1f11c7c7.js",
     "static/js/496.0c716fe9.chunk.js": "/React-JS-Resume-with-Terminal-/static/js/496.0c716fe9.chunk.js",
     "index.html": "/React-JS-Resume-with-Terminal-/index.html",
-    "main.b1f83c25.css.map": "/React-JS-Resume-with-Terminal-/static/css/main.b1f83c25.css.map",
-    "main.cc4060a2.js.map": "/React-JS-Resume-with-Terminal-/static/js/main.cc4060a2.js.map",
+    "main.d8601abe.css.map": "/React-JS-Resume-with-Terminal-/static/css/main.d8601abe.css.map",
+    "main.1f11c7c7.js.map": "/React-JS-Resume-with-Terminal-/static/js/main.1f11c7c7.js.map",
     "496.0c716fe9.chunk.js.map": "/React-JS-Resume-with-Terminal-/static/js/496.0c716fe9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1f83c25.css",
-    "static/js/main.cc4060a2.js"
+    "static/css/main.d8601abe.css",
+    "static/js/main.1f11c7c7.js"
   ]
 }
