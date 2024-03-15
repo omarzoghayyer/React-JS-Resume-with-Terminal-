@@ -1,0 +1,22 @@
+.professional-summary-container {
+  width: 80%;
+  margin: 20px auto; /* Center the container horizontally */
+}
+
+.professional-summary {
+  text-align: center; /* Center-align the text */
+  padding: 20px; /* Add padding to create space around the text */
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  max-width: 100%; /* Limit the maximum width of the box */
+  background-color: #f0f0f0; /* Gray background color */
+  border: 2px solid #ccc; /* Gray border */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.professional-summary-box {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.5; /* Set the line height for better readability */
+  overflow: hidden; /* Hide any overflowing text */
+  word-wrap: break-word; /* Wrap long words if necessary */
+}

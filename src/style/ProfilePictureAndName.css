@@ -1,0 +1,49 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align items to the start and end of the container */
+  padding: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: 20px;
+}
+
+.left-side {
+  flex: 1;
+}
+
+.right-side {
+  flex: 1;
+  text-align: right; /* Align text to the right within the right side */
+}
+
+.keywords {
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.horizontal-line {
+  margin-top: 10px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.hire-button,
+.chat-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hire-button:hover,
+.chat-button:hover {
+  background-color: #0056b3;
+}

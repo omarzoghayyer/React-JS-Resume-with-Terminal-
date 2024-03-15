@@ -117,3 +117,35 @@ body {
     transform: translateX(0) translateY(0) rotate(360deg);
   }
 }
+header {
+  background-color: #1a62e7;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+  display: flex; /* Display items in a row */
+}
+
+header nav ul li {
+  margin-left: 10px; /* Add space between list items */
+}
+
+header nav ul li:first-child {
+  margin-left: 0; /* No margin for the first list item */
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
