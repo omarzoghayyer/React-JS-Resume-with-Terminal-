@@ -1,6 +1,6 @@
 # Click here for Demo
 
-https://omarzoghayyer.github.io/React-JS-Resume-with-Terminal-/
+omarzoghayyer.com
 
 # Getting Started with Create React App
 
