@@ -1,20 +1,29 @@
 .profile-info {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Align items to the start and end of the container */
+  justify-content: space-between;
   padding: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-left: 20px;
+  margin: 50px auto; 
+  max-width: 75%;
+  font-size: 25px;
 }
 
 .left-side {
   flex: 1;
 }
 
-.right-side {
-  flex: 1;
-  text-align: right; /* Align text to the right within the right side */
+.photo-container {
+  display: flex;
+  justify-content: center;
 }
+
+.rounded-photo {
+  border-radius: 50%;
+  overflow: hidden; /* Ensure the image remains within the rounded container */
+}
+
+
 
 .keywords {
   margin-top: 10px; /* Adjust margin as needed */
@@ -23,27 +32,40 @@
 .horizontal-line {
   margin-top: 10px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #d45a08;
   width: 100%;
 }
 
-.buttons {
-  margin-top: 20px;
+.buttons a {
+  display: inline-block;
+  width: 100px; /* Set a fixed width */
+  margin-right: 30px;
+  margin-top: 10px;
+  overflow: hidden; /* Hide any overflow */
 }
 
-.hire-button,
-.chat-button {
-  padding: 10px 20px;
+
+@media screen and (max-width: 500px) {
+  .profile-info {
+    flex-direction: column; /* Change flex-direction for smaller screens */
+    align-items: center; /* Align items to the center for smaller screens */
+    max-width: 90%; /* Adjust maximum width for smaller screens */
+  }
+
+  .left-side {
+    max-width: 90%; /* Adjust maximum width for smaller screens */
+    margin-right: 10px; /* Add margin from the right side on smaller screens */
+    text-align: center; /* Align text to the center for smaller screens */
+  }
+}
+
+.social-logo {
+  width: 50%; /* Set the desired width for the social media logos */
+  height: auto; /* Maintain aspect ratio */
   margin-right: 10px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
-
-.hire-button:hover,
-.chat-button:hover {
-  background-color: #0056b3;
+.social-logo:hover {
+  width: 56px; /* Increased size when clicked */
 }

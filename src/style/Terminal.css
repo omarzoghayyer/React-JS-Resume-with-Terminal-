@@ -1,17 +1,17 @@
 .terminal {
-  width: 90%;
+  width: 60%; /* Adjusted width */
   max-width: 800px;
   height: 50vh;
   max-height: 500px;
   background-color: #1e1e1e;
   border-radius: 10px;
-  margin: auto;
+  margin: auto; /* Center the terminal horizontally */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
+
 .terminal-container {
   height: calc(50vh - 40px); /* Adjust this to fit your terminal size */
   overflow: auto;
@@ -29,7 +29,7 @@
   margin: auto;
   border: 2px solid black;
   border-radius: 5px;
-  padding: 10px;
+
 }
 .terminal-header {
   width: 100%;

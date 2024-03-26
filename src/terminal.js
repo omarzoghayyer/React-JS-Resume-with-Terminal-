@@ -1,50 +1,49 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from "react";
 
-import MyImage from './MyImage'
-import professionalPicture from './Images/oz.png' 
-import ProfileInfo from './profileInfo'
+import MyImage from "./MyImage";
+import professionalPicture from "./Images/oz.png";
+import ProfileInfo from "./profileInfo";
 
-import './style/ProfilePictureAndName.css'
-import './style/ProfessionalSummaryStyle.css'
-import './style/App.css'
-import './style/Terminal.css'
-import './style/Resume.css'
-import './style/Instructions.css'
+import "./style/ProfilePictureAndName.css";
+import "./style/ProfessionalSummaryStyle.css";
+import "./style/App.css";
+import "./style/Terminal.css";
+import "./style/Resume.css";
+import "./style/Instructions.css";
 
+function Terminal() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  const [path, setPath] = useState("c:\\user");
+  const [catPosition, setCatPosition] = useState({ x: 50, y: 50 });
+  const [catDirection, setCatDirection] = useState({ x: 1, y: 1 });
 
-function Terminal () {
-  const [input, setInput] = useState('')
-  const [output, setOutput] = useState('')
-  const [path, setPath] = useState('c:\\user')
-  const [catPosition, setCatPosition] = useState({ x: 50, y: 50 })
-  const [catDirection, setCatDirection] = useState({ x: 1, y: 1 })
-
-  function moveCat () {
-    let nextX = catPosition.x + catDirection.x
-    let nextY = catPosition.y + catDirection.y
+  function moveCat() {
+    let nextX = catPosition.x + catDirection.x;
+    let nextY = catPosition.y + catDirection.y;
 
     // Check if cat hits a horizontal wall
     if (nextX < 0 || nextX > 100) {
-      setCatDirection({ ...catDirection, x: -catDirection.x })
-      nextX = catPosition.x + catDirection.x
+      setCatDirection({ ...catDirection, x: -catDirection.x });
+      nextX = catPosition.x + catDirection.x;
     }
 
     // Check if cat hits a vertical wall
     if (nextY < 0 || nextY > 100) {
-      setCatDirection({ ...catDirection, y: -catDirection.y })
-      nextY = catPosition.y + catDirection.y
+      setCatDirection({ ...catDirection, y: -catDirection.y });
+      nextY = catPosition.y + catDirection.y;
     }
 
-    setCatPosition({ x: nextX, y: nextY })
+    setCatPosition({ x: nextX, y: nextY });
   }
 
   useEffect(() => {
-    const intervalId = setInterval(moveCat, 20)
+    const intervalId = setInterval(moveCat, 20);
 
-    return () => clearInterval(intervalId)
-  }, [])
+    return () => clearInterval(intervalId);
+  }, []);
 
-  function showProject () {
+  function showProject() {
     return `
     <div class="terminal-window">
      <div class="terminal-prompt">
@@ -55,9 +54,9 @@ function Terminal () {
         <h4>Command Line Resume Portfolio — Detail:</h4>
         <p>I developed this application by utalizing the React.js framework, a novel method has been devised for reviewing my portfolio through a user-friendly command line terminal. This approach offers a unique way of navigating through directories to locate specific information that users wish to view. Tech Used: React JS. </p>
       </div>
-    `
+    `;
   }
-  function showResume () {
+  function showResume() {
     return `
     <div class="terminal-window">
      <div class="terminal-prompt">
@@ -153,114 +152,114 @@ function Terminal () {
                 </li>
             </ul>
       </div>
-    `
+    `;
   }
 
-  function handleInputChange (event) {
-    setInput(event.target.value)
+  function handleInputChange(event) {
+    setInput(event.target.value);
   }
 
-  function handleFormSubmit (event) {
-    event.preventDefault()
-    const command = input.trim()
-    if (command === 'ls') {
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    const command = input.trim();
+    if (command === "ls") {
       setOutput(
         output +
           `<div class="terminal-prompt"><span><i class="fas fa-folder"></i>&nbsp;${path}\\></span>
           </div>
           <div class="yellow-text" style="margin-top: -10px; margin-left: 10px;">--background --projects --resume --interest --cat</div>`
-      )
-    } else if (command === 'clear') {
-      setOutput('')
-    } else if (command.startsWith('cd')) {
-      const newPath = command.split(' ')[1]
-      if (newPath === '..') {
-        const pathParts = path.split('\\')
-        pathParts.pop()
-        setPath(pathParts.join('\\'))
+      );
+    } else if (command === "clear") {
+      setOutput("");
+    } else if (command.startsWith("cd")) {
+      const newPath = command.split(" ")[1];
+      if (newPath === "..") {
+        const pathParts = path.split("\\");
+        pathParts.pop();
+        setPath(pathParts.join("\\"));
       } else {
-        setPath(path + '\\' + newPath)
+        setPath(path + "\\" + newPath);
       }
-    } else if (command === 'resume') {
+    } else if (command === "resume") {
       setOutput(
         output +
           `<div class="terminal-prompt"><span>${path}\\></span>Would you like to print the resume in the terminal or open a PDF? Type 'print' or 'pdf'</div>`
-      )
-    } else if (command === 'print') {
-      setOutput(output + "<div class='white-text'>" + showResume() + '</div>')
-    } else if (command === 'pdf') {
+      );
+    } else if (command === "print") {
+      setOutput(output + "<div class='white-text'>" + showResume() + "</div>");
+    } else if (command === "pdf") {
       window.open(
-        'https://docs.google.com/document/d/11RYtznPfIiShgd5lti7pooI-ib49M6Elq16s5Eald-o/edit?usp=sharing'
-      )
-    } else if (command === 'interest') {
+        "https://docs.google.com/document/d/11RYtznPfIiShgd5lti7pooI-ib49M6Elq16s5Eald-o/edit?usp=sharing"
+      );
+    } else if (command === "interest") {
       setOutput(
         output +
           `<div class="terminal-prompt"><span>${path}\\interest\\></span>Here are my interests:</div>` +
           "<div class='white-text'>As an engineer with a keen interest in operating systems and automation, I enjoy contributing to open source projects related to operating system architecture in my free time. I am also committed to expanding my knowledge of lower-level programming languages to gain a deeper understanding of computer systems architecture and optimize software performance.</div>"
-      )
-    } else if (command === 'cat') {
-      const cat = document.createElement('div')
-      cat.classList.add('cat-icon')
-      const catImage = document.createElement('img')
-      catImage.src = ''
-      cat.appendChild(catImage)
-      const catText = document.createElement('div')
-      catText.classList.add('cat-text')
-      catText.textContent = 'Hire Me'
-      cat.appendChild(catText)
-      document.querySelector('.terminal-body').appendChild(cat)
-    } else if (command === 'background') {
+      );
+    } else if (command === "cat") {
+      const cat = document.createElement("div");
+      cat.classList.add("cat-icon");
+      const catImage = document.createElement("img");
+      catImage.src = "";
+      cat.appendChild(catImage);
+      const catText = document.createElement("div");
+      catText.classList.add("cat-text");
+      catText.textContent = "Hire Me";
+      cat.appendChild(catText);
+      document.querySelector(".terminal-body").appendChild(cat);
+    } else if (command === "background") {
       setOutput(
         output +
           `<div class="terminal-prompt"><span>${path}\\background\\></span>Here is my background:</div>` +
           "<div class='white-text'>I hold a BS business degree with 5 years of experience in tech. My recent project is the one you are using now. The one before that is a simple compiler.</div>"
-      )
-    } else if (command === 'projects') {
+      );
+    } else if (command === "projects") {
       setOutput(
         output +
           `<div class="terminal-prompt"><span>${path}\\></span>Do you want to view a GitHub account or print the project description in the terminal? Type 'here' or 'Open Github'</div>`
-      )
-    } else if (command === 'here') {
-      setOutput(output + "<div class='white-text'>" + showProject() + '</div>')
-    } else if (command === 'Open Github') {
-      window.open('https://github.com/omarzoghayyer')
-    } else if (command === 'back') {
-      const pathParts = path.split('\\')
-      pathParts.pop()
-      setPath(pathParts.join('\\'))
-      setOutput('')
-    } else if (command === 'help') {
+      );
+    } else if (command === "here") {
+      setOutput(output + "<div class='white-text'>" + showProject() + "</div>");
+    } else if (command === "Open Github") {
+      window.open("https://github.com/omarzoghayyer");
+    } else if (command === "back") {
+      const pathParts = path.split("\\");
+      pathParts.pop();
+      setPath(pathParts.join("\\"));
+      setOutput("");
+    } else if (command === "help") {
       setOutput(
         output +
           `<div class="terminal-prompt"><span>${path}\\></span>Here are the available commands:</div>` +
           "<div class='white-text'>ls - list available options<br>cd [directory] - change directory<br>resume - display my resume<br>interest - display my interests<br>projects - display my projects<br>clear - clear the terminal<br>back - go back to the previous directory</div>"
-      )
+      );
     } else {
       setOutput(
         output +
           `<div class="terminal-prompt"><span>${path}\\></span>${input}</div>`
-      )
+      );
     }
-    setInput('')
+    setInput("");
   }
 
   return (
     <div>
-      <div className='terminal'>
-        <div className='terminal-header'>Terminal</div>
+      <div className="terminal">
+        <div className="terminal-header">Terminal</div>
         <div
-          className='terminal-body cursor-blink'
+          className="terminal-body cursor-blink"
           dangerouslySetInnerHTML={{ __html: output }}
         ></div>
         <form onSubmit={handleFormSubmit}>
-          <div className='terminal-prompt'>
+          <div className="terminal-prompt">
             <span>
-              <i className='fa fa-folder'></i>&nbsp;{path}
+              <i className="fa fa-folder"></i>&nbsp;{path}
             </span>
             <input
-              type='text'
-              className='terminal-input'
-              placeholder='Type `ls` to start...'
+              type="text"
+              className="terminal-input"
+              placeholder="Type `ls` to start..."
               value={input}
               onChange={handleInputChange}
               autoFocus
@@ -269,7 +268,7 @@ function Terminal () {
         </form>
       </div>
 
-      <div className='instructions'>
+      <div className="instructions">
         <p>
           Welcome to the Resume through Terminal! Here are some available
           commands:
@@ -289,35 +288,8 @@ function Terminal () {
           </li>
         </ul>
       </div>
-      <footer>
-        <p className='NoteInstructions'>
-          This program is in testing mode and has limited commands available!
-          You may also find several bugs around when moving between directories.
-          Feel free to report any encountered bugs{' '}
-          <a href='https://github.com/omarzoghayyer/React-JS-Resume-with-Terminal-'>
-            here
-          </a>
-          .
-        </p>
-        <div className='Features'>
-          <h2>Request a Feature</h2>
-          <form
-            action='https://api.github.com/repos/omarzoghayyer/React-JS-Resume-with-Terminal-/issues
-'
-            method='POST'
-          >
-            <input type='hidden' name='title' value='New feature request' />
-            <input type='hidden' name='labels[]' value='feature' />
-            <textarea
-              name='body'
-              placeholder='Enter your feature request here [Note: Not Working. Development mode only]'
-            ></textarea>
-            <button type='submit'>Submit</button>
-          </form>
-        </div>
-      </footer>
     </div>
-  )
+  );
 }
 
-export default Terminal
+export default Terminal;

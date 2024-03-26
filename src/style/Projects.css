@@ -1,27 +1,41 @@
 .projects-container {
   display: flex;
   flex-wrap: wrap;
+  width: 60%; /* Set width to 60% */
+  max-width: 100%; /* Set maximum width to ensure responsiveness */
   justify-content: space-around;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 20px; /* Add padding to the left and right */
 }
 
 .project {
-  width: 300px;
+  width: 100%;
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* Add media query for larger screens */
+@media screen and (min-width: 768px) {
+  .project {
+    width: calc(33.33% - 0px); /* Adjust width for larger screens */
+  }
+}
+
 .project-content {
   cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .project img {
-  width: 100%;
   max-height: 200px;
   object-fit: cover;
 }
 
 .project-description {
   margin-top: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: rgb(113, 113, 116);
 }
 
 .project-popup {

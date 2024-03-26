@@ -1,13 +1,16 @@
 .instructions {
-    background-color: #ffffff;
     padding: 20px;
-    margin-top: 20px;
+    width: 56%;
+    margin-top: 50px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    border-radius: 10px;
+    color: forestgreen;
   }
   
   .instructions h2 {
-    margin-top: 0;
+    margin-top: 10px;
     font-size: 1.5em;
   }
   
@@ -21,4 +24,5 @@
     margin-bottom: 5px;
     font-size: 1.2em;
   }
+
   

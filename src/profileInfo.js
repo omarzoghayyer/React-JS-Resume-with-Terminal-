@@ -1,46 +1,45 @@
-import React from 'react';
-import MyImage from './MyImage';
-import professionalPicture from './Images/oz.png';
-import './style/ProfilePictureAndName.css';
-import './style/ProfessionalSummaryStyle.css';
+import React from "react";
+import linkedinLogo from "./Images/linkedin-logo.png";
+import githubLogo from "./Images/github-logo.png";
+import emailLogo from "./Images/email-logo.png";
+import xLogo from "./Images/x-logo.png";
+
+
+import "./style/ProfilePictureAndName.css";
+import "./style/ProfessionalSummaryStyle.css";
 
 function ProfileInfo() {
   return (
     <div>
       {/* Container for profile information */}
-      <div className='profile-info'>
+      <div className="profile-info">
         {/* Left side for your name */}
-        <div className='left-side'>
-          <h1>Omar Zoghayyer</h1>
-          <hr className='horizontal-line' />
-          <div className='keywords'>
-            <span>Tech Leader / Product Manager / Gamer</span>
+        <div className="left-side">
+          <h1>OMAR ZOGHAYYER</h1>
+          <hr className="horizontal-line" />
+          <div className="keywords">
+            <span>
+              Product Management & Strategy - Team Building - Tech & Analytics -
+              Quality Design{" "}
+            </span>
           </div>
-          <div className='buttons'>
-            <button className='hire-button'>Hire Me</button>
-            <button
-              className='chat-button'
-              onClick={() => window.open('sms:4159809396', '_blank')}
-            >
-              Chat with Me Live
-            </button>
-          </div>
-        </div>
-        {/* Right side for the professional picture */}
-        <div className='right-side'>
-          <MyImage src={professionalPicture} alt='Professional Picture' />
-        </div>
-      </div>
-      {/* Container for professional summary */}
-      <div className='professional-summary-container'>
-        <div className='professional-summary'>
-          <div className='professional-summary-box'>
-            <p className='paragraph-box'>Quality Assurance Product Owner for the Tools & automation team, I bring over five years of experience in quality assurance, honed through roles at Electronic Arts and other esteemed organizations. During this time, I've demonstrated strong leadership, deep understanding of QA methodologies, and a track record of delivering full testing plans for technical products effectively. My experience includes prominent projects like Battlefield HD, and Maxis - Sims  where I contributed to ensuring top notch quality standards.</p>
+          <div className="buttons">
+            <a href="https://www.linkedin.com/">
+              <img src={linkedinLogo} alt="LinkedIn" className="social-logo" />
+            </a>
+            <a href="mailto:sfzoghayyer@gmail.com" className="email-link">
+              <img src={emailLogo} alt="Email" className="social-logo" />
+            </a>
+            <a href="https://github.com/">
+              <img src={githubLogo} alt="GitHub" className="social-logo" />
+            </a>
+            <a href="https://x.com/">
+              <img src={xLogo} alt="x" className="social-logo" />
+            </a>
           </div>
         </div>
       </div>
     </div>
-    
   );
 }
 
